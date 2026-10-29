@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="RelicData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/relic_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/primary_stats_data.gd" id="2"]
+
+[sub_resource type="Resource" id="Stats"]
+script = ExtResource("2")
+speed = 10.0
+weapon_range = 30.0
+elemental_damage = -2.0
+
+[resource]
+script = ExtResource("1")
+id = "brotato_wings"
+display_name = "Wings"
+description = "+10% 移速，+30 攻击范围，-2 元素伤害"
+rarity = 3
+base_price = 85
+copy_limit = 0
+tags = PackedStringArray("Speed", "Range")
+primary_stats = SubResource("Stats")
+

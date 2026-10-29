@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemyEquipmentData" load_steps=4 format=3]
+[ext_resource type="Script" path="res://scripts/data/enemy_equipment_data.gd" id="equipment"]
+[ext_resource type="Script" path="res://scripts/data/attack_profile_data.gd" id="attack"]
+[sub_resource type="Resource" id="profile"]
+script = ExtResource("attack")
+kind = 2
+damage = 9.0
+attack_range = 220.0
+attack_interval = 1.6
+target_count = 1
+[resource]
+script = ExtResource("equipment")
+id = "curse_staff"
+display_name = "必中咒杖"
+recipient = 1
+attacks = Array[ExtResource("attack")]([SubResource("profile")])

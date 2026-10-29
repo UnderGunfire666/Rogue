@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/character_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/primary_stats_data.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/data/character_combat_rules.gd" id="3"]
+[ext_resource type="Script" path="res://scripts/data/conditional_stat_bonus.gd" id="4"]
+[ext_resource type="Texture2D" path="res://assets/art/wanderer.svg" id="5"]
+
+[sub_resource type="Resource" id="Start"]
+script = ExtResource("2")
+max_hp = 20.0
+
+[sub_resource type="Resource" id="Growth"]
+script = ExtResource("2")
+max_hp = 33.0
+armor = 33.0
+
+[sub_resource type="Resource" id="Combat"]
+script = ExtResource("3")
+can_heal = false
+
+[sub_resource type="Resource" id="Attack"]
+script = ExtResource("4")
+stat = "attack_speed"
+condition = 2
+amount = 40.0
+
+[sub_resource type="Resource" id="Speed"]
+script = ExtResource("4")
+stat = "speed"
+condition = 2
+amount = 20.0
+
+[resource]
+script = ExtResource("1")
+id = "golem"
+display_name = "石像鬼 (Golem)"
+description = "+20 最大生命；最大生命和护甲成长 +33%；生命低于 50% 时 +40% 攻速、+20% 移速；无法回血。"
+portrait = ExtResource("5")
+primary_stats = SubResource("Start")
+growth_modifiers = SubResource("Growth")
+combat_rules = SubResource("Combat")
+conditional_bonuses = Array[ExtResource("4")]([SubResource("Attack"), SubResource("Speed")])

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemyEquipmentData" load_steps=4 format=3]
+[ext_resource type="Script" path="res://scripts/data/enemy_equipment_data.gd" id="equipment"]
+[ext_resource type="Script" path="res://scripts/data/attack_profile_data.gd" id="attack"]
+[sub_resource type="Resource" id="profile0"]
+script = ExtResource("attack")
+kind = 2
+effect = 1
+attack_range = 88.0
+target_count = 3
+healing_per_second = 5
+[resource]
+script = ExtResource("equipment")
+id = "healing_staff"
+display_name = "苔衣治疗杖"
+recipient = 1
+attacks = Array[ExtResource("attack")]([SubResource("profile0")])

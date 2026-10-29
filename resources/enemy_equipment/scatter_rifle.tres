@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyEquipmentData" load_steps=4 format=3]
+[ext_resource type="Script" path="res://scripts/data/enemy_equipment_data.gd" id="equipment"]
+[ext_resource type="Script" path="res://scripts/data/attack_profile_data.gd" id="attack"]
+[sub_resource type="Resource" id="profile"]
+script = ExtResource("attack")
+kind = 1
+damage = 5.0
+attack_range = 180.0
+attack_interval = 1.8
+projectile_speed = 145.0
+projectile_count = 3
+spread_degrees = 24.0
+[resource]
+script = ExtResource("equipment")
+id = "scatter_rifle"
+display_name = "三连散射枪"
+recipient = 1
+attacks = Array[ExtResource("attack")]([SubResource("profile")])

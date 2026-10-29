@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/character_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/primary_stats_data.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/data/character_combat_rules.gd" id="3"]
+[ext_resource type="Texture2D" path="res://assets/art/wanderer.svg" id="4"]
+
+[sub_resource type="Resource" id="Start"]
+script = ExtResource("2")
+speed = 5.0
+harvesting = 8.0
+
+[sub_resource type="Resource" id="Combat"]
+script = ExtResource("3")
+one_hit_death = true
+excluded_relic_tags = PackedStringArray("Max HP", "HP Regeneration", "Life Steal", "Armor")
+
+[resource]
+script = ExtResource("1")
+id = "wounded"
+display_name = "受伤者 (Wounded)"
+description = "受到攻击即倒下；+5% 移速、+8 收获。商店和宝箱不会提供生命、防御与生命窃取类遗物。"
+portrait = ExtResource("4")
+primary_stats = SubResource("Start")
+combat_rules = SubResource("Combat")

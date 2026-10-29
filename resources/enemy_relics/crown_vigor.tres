@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="RelicData" load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/data/relic_data.gd" id="1"]
+[resource]
+script = ExtResource("1")
+id = "crown_vigor"
+display_name = "枯冠生机"
+description = "敌人专用：移速提升与持续生命恢复。"
+recipient = 1
+movement_bonus = 0.1
+regeneration = 1

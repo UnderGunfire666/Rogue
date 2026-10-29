@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/character_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/character_combat_rules.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/art/wanderer.svg" id="3"]
+
+[sub_resource type="Resource" id="Combat"]
+script = ExtResource("2")
+enemy_count_multiplier = 0.3
+enemy_health_multiplier = 2.75
+enemy_damage_multiplier = 1.35
+enemy_material_multiplier = 3.0
+elite_boss_damage_multiplier = 2.25
+
+[resource]
+script = ExtResource("1")
+id = "jack"
+display_name = "杰克 (Jack)"
+description = "对精英和 BOSS 伤害 +125%；敌人掉落金币 +200%；敌人数量 -70%、生命 +175%、伤害 +35%。"
+portrait = ExtResource("3")
+combat_rules = SubResource("Combat")

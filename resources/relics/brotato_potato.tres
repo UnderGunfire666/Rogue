@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="RelicData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/relic_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/primary_stats_data.gd" id="2"]
+
+[sub_resource type="Resource" id="Stats"]
+script = ExtResource("2")
+max_hp = 3.0
+hp_regeneration = 2.0
+life_steal = 1.0
+damage = 5.0
+attack_speed = 5.0
+speed = 3.0
+dodge = 3.0
+armor = 1.0
+luck = 5.0
+
+[resource]
+script = ExtResource("1")
+id = "brotato_potato"
+display_name = "Potato"
+description = "+3 最大生命，+2 生命再生，+1% 生命窃取，+5% 伤害，+5% 攻击速度，+3% 移速，+3% 闪避，+1 护甲，+5 幸运"
+rarity = 4
+base_price = 95
+copy_limit = 0
+tags = PackedStringArray("Max HP", "HP Regeneration", "Damage", "Speed", "Luck")
+primary_stats = SubResource("Stats")
+

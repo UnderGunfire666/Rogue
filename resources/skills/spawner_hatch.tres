@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/skill_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "spawner_hatch"
+display_name = "虫巢呼唤"
+description = "原地吟唱并孵化召唤 2 只狂躁杂兵加入战场。"
+kind = 4
+damage = 10.0
+elemental_scaling = 0.5
+cast_range = 320.0
+radius = 52.0
+cooldown = 7.5
+projectile_count = 2
+summon_enemy_id = "melee"
+

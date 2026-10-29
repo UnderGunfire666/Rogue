@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="RelicData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/relic_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/primary_stats_data.gd" id="2"]
+
+[sub_resource type="Resource" id="Stats"]
+script = ExtResource("2")
+melee_damage = 1.0
+crit_chance = 3.0
+max_hp = -1.0
+
+[resource]
+script = ExtResource("1")
+id = "brotato_claw_tree"
+display_name = "Claw Tree"
+description = "+1 近战伤害，+3% 暴击率，-1 最大生命"
+rarity = 1
+base_price = 20
+copy_limit = 0
+tags = PackedStringArray("Melee Damage", "Crit Chance")
+primary_stats = SubResource("Stats")
+

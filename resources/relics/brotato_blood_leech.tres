@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="RelicData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/relic_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/primary_stats_data.gd" id="2"]
+
+[sub_resource type="Resource" id="Stats"]
+script = ExtResource("2")
+life_steal = 2.0
+hp_regeneration = 2.0
+harvesting = -3.0
+
+[resource]
+script = ExtResource("1")
+id = "brotato_blood_leech"
+display_name = "Blood Leech"
+description = "+2% 生命窃取，+2 生命再生，-3 收获"
+rarity = 2
+base_price = 45
+copy_limit = 0
+tags = PackedStringArray("Life Steal", "HP Regeneration")
+primary_stats = SubResource("Stats")
+

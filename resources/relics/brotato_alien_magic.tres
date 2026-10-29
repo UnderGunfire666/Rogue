@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="RelicData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/relic_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/primary_stats_data.gd" id="2"]
+
+[sub_resource type="Resource" id="Stats"]
+script = ExtResource("2")
+max_hp = 8.0
+hp_regeneration = 3.0
+luck = -8.0
+
+[resource]
+script = ExtResource("1")
+id = "brotato_alien_magic"
+display_name = "Alien Magic"
+description = "+8 最大生命，+3 生命再生，-8 幸运"
+rarity = 3
+base_price = 85
+copy_limit = 0
+tags = PackedStringArray("Max HP", "HP Regeneration")
+primary_stats = SubResource("Stats")
+

@@ -1,0 +1,79 @@
+[gd_resource type="Resource" script_class="EncounterData" load_steps=22 format=3]
+[ext_resource type="Script" path="res://scripts/data/encounter_data.gd" id="encounter"]
+[ext_resource type="Script" path="res://scripts/data/group_spawn_schedule.gd" id="schedule"]
+[ext_resource type="Script" path="res://scripts/data/enemy_group_data.gd" id="group_script"]
+[ext_resource type="Script" path="res://scripts/data/enemy_group_entry.gd" id="entry_script"]
+[ext_resource type="Resource" path="res://resources/spawns/all_edges.tres" id="location"]
+[ext_resource type="Resource" path="res://resources/groups/guard.tres" id="guard"]
+[ext_resource type="Resource" path="res://resources/groups/elite.tres" id="elite"]
+[ext_resource type="Resource" path="res://resources/enemies/elite_melee.tres" id="elite_melee"]
+[ext_resource type="Resource" path="res://resources/enemies/melee.tres" id="melee"]
+[ext_resource type="Resource" path="res://resources/enemies/ranged.tres" id="ranged"]
+[ext_resource type="Resource" path="res://resources/enemies/healer.tres" id="healer"]
+
+[sub_resource type="Resource" id="h_e0"]
+script = ExtResource("entry_script")
+enemy = ExtResource("melee")
+count = 7
+[sub_resource type="Resource" id="h_e1"]
+script = ExtResource("entry_script")
+enemy = ExtResource("ranged")
+count = 3
+[sub_resource type="Resource" id="h_e2"]
+script = ExtResource("entry_script")
+enemy = ExtResource("healer")
+count = 1
+[sub_resource type="Resource" id="guard_heavy"]
+script = ExtResource("group_script")
+display_name = "重装卫队（11只）"
+entries = Array[ExtResource("entry_script")]([SubResource("h_e0"), SubResource("h_e1"), SubResource("h_e2")])
+entry_interval = 0.16
+
+[sub_resource type="Resource" id="ed_e0"]
+script = ExtResource("entry_script")
+enemy = ExtResource("elite_melee")
+count = 2
+[sub_resource type="Resource" id="ed_e1"]
+script = ExtResource("entry_script")
+enemy = ExtResource("melee")
+count = 6
+[sub_resource type="Resource" id="ed_e2"]
+script = ExtResource("entry_script")
+enemy = ExtResource("ranged")
+count = 3
+[sub_resource type="Resource" id="ed_e3"]
+script = ExtResource("entry_script")
+enemy = ExtResource("healer")
+count = 1
+[sub_resource type="Resource" id="elite_double"]
+script = ExtResource("group_script")
+display_name = "双精英强袭群（12只）"
+entries = Array[ExtResource("entry_script")]([SubResource("ed_e0"), SubResource("ed_e1"), SubResource("ed_e2"), SubResource("ed_e3")])
+entry_interval = 0.16
+
+[sub_resource type="Resource" id="rule0"]
+script = ExtResource("schedule")
+group = ExtResource("guard")
+location = ExtResource("location")
+[sub_resource type="Resource" id="rule1"]
+script = ExtResource("schedule")
+group = ExtResource("elite")
+location = ExtResource("location")
+[sub_resource type="Resource" id="rule2"]
+script = ExtResource("schedule")
+group = SubResource("guard_heavy")
+location = ExtResource("location")
+[sub_resource type="Resource" id="rule3"]
+script = ExtResource("schedule")
+group = SubResource("elite_double")
+location = ExtResource("location")
+
+[resource]
+script = ExtResource("encounter")
+id = "elite"
+display_name = "精英巡逻"
+kind = 1
+preparation_time = 2.0
+duration = 35.0
+group_interval = 4.0
+schedules = Array[ExtResource("schedule")]([SubResource("rule0"), SubResource("rule1"), SubResource("rule2"), SubResource("rule3")])

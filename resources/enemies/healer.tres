@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=4 format=3]
+[ext_resource type="Script" path="res://scripts/data/enemy_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/art/enemy_healer.svg" id="2"]
+[ext_resource type="Resource" path="res://resources/enemy_equipment/healing_staff.tres" id="3"]
+
+[resource]
+script = ExtResource("1")
+id = "healer"
+display_name = "苔衣医师"
+category = 0
+movement = 2
+texture = ExtResource("2")
+max_health = 30.0
+movement_speed = 108.0
+safety_distance = 150.0
+equipment = ExtResource("3")
+
+experience_reward = 4
+gold_reward = 3

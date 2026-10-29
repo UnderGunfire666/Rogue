@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/character_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/primary_stats_data.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/data/character_equipment_rules.gd" id="3"]
+[ext_resource type="Texture2D" path="res://assets/art/wanderer.svg" id="4"]
+
+[sub_resource type="Resource" id="Start"]
+script = ExtResource("2")
+weapon_range = 50.0
+
+[sub_resource type="Resource" id="Growth"]
+script = ExtResource("2")
+ranged_damage = 50.0
+max_hp = -25.0
+
+[sub_resource type="Resource" id="Equipment"]
+script = ExtResource("3")
+allow_melee = false
+
+[resource]
+script = ExtResource("1")
+id = "ranger"
+display_name = "游侠 (Ranger)"
+description = "+50 攻击范围；固定携带余烬手枪；远程伤害成长 +50%，最大生命成长 -25%；不能装备近战武器。"
+portrait = ExtResource("4")
+primary_stats = SubResource("Start")
+growth_modifiers = SubResource("Growth")
+equipment_rules = SubResource("Equipment")
+starting_weapons = PackedStringArray("pistol")

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="RelicData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/relic_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/primary_stats_data.gd" id="2"]
+
+[sub_resource type="Resource" id="Stats"]
+script = ExtResource("2")
+luck = 20.0
+dodge = 6.0
+life_steal = -2.0
+
+[resource]
+script = ExtResource("1")
+id = "brotato_clover"
+display_name = "Clover"
+description = "+20 幸运，+6% 闪避，-2% 生命窃取"
+rarity = 3
+base_price = 65
+copy_limit = 0
+tags = PackedStringArray("Luck", "Dodge")
+primary_stats = SubResource("Stats")
+

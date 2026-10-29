@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/skill_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "fire_whirl"
+display_name = "烈焰漩涡"
+description = "在目标区域掀起持续 3 秒的烈焰风暴，立即造成火焰伤害并持续引燃范围内所有敌人。"
+kind = 7
+damage = 30.0
+elemental_scaling = 1.4
+cast_range = 240.0
+radius = 70.0
+cooldown = 8.5
+duration = 3.0
+

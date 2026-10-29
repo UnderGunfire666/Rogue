@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="RelicData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/relic_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/primary_stats_data.gd" id="2"]
+
+[sub_resource type="Resource" id="Stats"]
+script = ExtResource("2")
+crit_chance = 5.0
+dodge = 5.0
+weapon_range = -15.0
+
+[resource]
+script = ExtResource("1")
+id = "brotato_blindfold"
+display_name = "Blindfold"
+description = "+5% 暴击率，+5% 闪避，-15 攻击范围"
+rarity = 2
+base_price = 45
+copy_limit = 0
+tags = PackedStringArray("Crit Chance", "Dodge")
+primary_stats = SubResource("Stats")
+

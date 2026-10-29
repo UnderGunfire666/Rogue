@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="RelicData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/relic_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/art/fury.svg" id="2"]
+
+[resource]
+script = ExtResource("1")
+rarity = 2
+id = "fury"
+display_name = "疾攻刻印"
+description = "近战攻击频率 +50%：攻击间隔 ÷ 1.5。"
+icon = ExtResource("2")
+melee_attack_speed_bonus = 0.5
+tags = PackedStringArray("Attack Speed")

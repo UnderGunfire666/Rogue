@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/skill_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "spitter_burst"
+display_name = "剧毒喷吐"
+description = "向前方扇形区域连续喷出 3 枚腐蚀酸液弹丸，封锁走位空间。"
+kind = 2
+damage = 9.0
+elemental_scaling = 0.8
+cast_range = 280.0
+radius = 24.0
+cooldown = 4.5
+projectile_count = 3
+spread_angle = 36.0
+

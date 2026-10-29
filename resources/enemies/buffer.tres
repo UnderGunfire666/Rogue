@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/enemy_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/art/enemy_healer.svg" id="2"]
+[ext_resource type="Resource" path="res://resources/enemy_equipment/healing_staff.tres" id="3"]
+[ext_resource type="Resource" path="res://resources/skills/buffer_totem.tres" id="4"]
+
+[resource]
+script = ExtResource("1")
+id = "buffer"
+display_name = "鼓舞狂热者"
+category = 0
+movement = 2
+texture = ExtResource("2")
+max_health = 38.0
+movement_speed = 108.0
+safety_distance = 160.0
+equipment = ExtResource("3")
+skill = ExtResource("4")
+experience_reward = 5
+gold_reward = 4
+

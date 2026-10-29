@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/character_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/primary_stats_data.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/data/character_equipment_rules.gd" id="3"]
+[ext_resource type="Script" path="res://scripts/data/equipment_stat_bonus.gd" id="4"]
+[ext_resource type="Texture2D" path="res://assets/art/wanderer.svg" id="5"]
+
+[sub_resource type="Resource" id="Start"]
+script = ExtResource("2")
+melee_damage = 5.0
+attack_speed = -40.0
+luck = -30.0
+
+[sub_resource type="Resource" id="Equipment"]
+script = ExtResource("3")
+allow_ranged = false
+
+[sub_resource type="Resource" id="Count"]
+script = ExtResource("4")
+source = 1
+target = "attack_speed"
+amount_per_unit = 20.0
+
+[resource]
+script = ExtResource("1")
+id = "gladiator"
+display_name = "角斗士 (Gladiator)"
+description = "+5 近战伤害，-40% 攻击速度，-30 幸运；每种不同武器增加 20% 攻击速度；不能装备远程武器。"
+portrait = ExtResource("5")
+primary_stats = SubResource("Start")
+equipment_rules = SubResource("Equipment")
+equipment_stat_bonuses = Array[ExtResource("4")]([SubResource("Count")])

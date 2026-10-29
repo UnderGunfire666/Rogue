@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="MapDifficultyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/map_difficulty_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/art/theme_nightmare.svg" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "hard"
+display_name = "困难"
+theme_name = "噩梦"
+description = "准备好迎接接踵而至的考验了吗？危机越密集，收获成长的机会也越多。"
+order = 2
+battle_ratio = 0.8
+reward_ratio = 0.1
+event_ratio = 0.1
+placeholder_art = ExtResource("2")
+art_count = 5
+accent_color = Color(0.95, 0.55, 0.53, 1)

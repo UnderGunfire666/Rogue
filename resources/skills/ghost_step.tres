@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/skill_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "ghost_step"
+display_name = "幽灵闪步"
+description = "向准星方向瞬间闪现一段距离，获得 1.0 秒无敌闪避并对落点周围造成幽影冲击。"
+kind = 6
+damage = 22.0
+elemental_scaling = 0.8
+cast_range = 150.0
+radius = 52.0
+cooldown = 6.0
+duration = 1.0
+dash_speed = 600.0
+

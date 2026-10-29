@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="MapDifficultyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/map_difficulty_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/art/theme_memory.svg" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "easy"
+display_name = "简单"
+theme_name = "回忆"
+description = "重返熟悉的梦境，暂歇片刻，或许也会错过一些成长。"
+order = 0
+battle_ratio = 0.6
+reward_ratio = 0.2
+event_ratio = 0.2
+placeholder_art = ExtResource("2")
+art_count = 5
+accent_color = Color(0.5, 0.82, 0.74, 1)

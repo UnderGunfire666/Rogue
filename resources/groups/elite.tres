@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="EnemyGroupData" load_steps=11 format=3]
+[ext_resource type="Script" path="res://scripts/data/enemy_group_data.gd" id="group"]
+[ext_resource type="Script" path="res://scripts/data/enemy_group_entry.gd" id="entry"]
+[ext_resource type="Resource" path="res://resources/enemies/elite_melee.tres" id="enemy0"]
+[ext_resource type="Resource" path="res://resources/enemies/melee.tres" id="enemy1"]
+[ext_resource type="Resource" path="res://resources/enemies/ranged.tres" id="enemy2"]
+[ext_resource type="Resource" path="res://resources/enemies/healer.tres" id="enemy3"]
+[sub_resource type="Resource" id="entry0"]
+script = ExtResource("entry")
+enemy = ExtResource("enemy0")
+count = 1
+[sub_resource type="Resource" id="entry1"]
+script = ExtResource("entry")
+enemy = ExtResource("enemy1")
+count = 5
+[sub_resource type="Resource" id="entry2"]
+script = ExtResource("entry")
+enemy = ExtResource("enemy2")
+count = 2
+[sub_resource type="Resource" id="entry3"]
+script = ExtResource("entry")
+enemy = ExtResource("enemy3")
+count = 1
+[resource]
+script = ExtResource("group")
+display_name = "精英小队"
+entries = Array[ExtResource("entry")]([SubResource("entry0"), SubResource("entry1"), SubResource("entry2"), SubResource("entry3")])
+entry_interval = 0.2

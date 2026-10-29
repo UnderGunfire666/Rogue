@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="RelicData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/relic_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/primary_stats_data.gd" id="2"]
+
+[sub_resource type="Resource" id="Stats"]
+script = ExtResource("2")
+melee_damage = 2.0
+ranged_damage = 1.0
+hp_regeneration = -1.0
+
+[resource]
+script = ExtResource("1")
+id = "brotato_hedgehog"
+display_name = "Hedgehog"
+description = "+2 近战伤害，+1 远程伤害，-1 生命再生"
+rarity = 1
+base_price = 30
+copy_limit = 0
+tags = PackedStringArray("Melee Damage", "Ranged Damage")
+primary_stats = SubResource("Stats")
+

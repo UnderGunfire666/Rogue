@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/skill_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "shredder_rocket"
+display_name = "粉碎飞弹"
+description = "向目标方向发射高爆粉碎飞弹，命中敌人后引发半径 72 的剧烈连环爆炸。"
+kind = 2
+damage = 48.0
+elemental_scaling = 1.2
+cast_range = 320.0
+radius = 72.0
+cooldown = 7.5
+projectile_count = 1
+spread_angle = 0.0
+

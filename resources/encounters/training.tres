@@ -1,0 +1,153 @@
+[gd_resource type="Resource" script_class="EncounterData" load_steps=34 format=3]
+[ext_resource type="Script" path="res://scripts/data/encounter_data.gd" id="encounter"]
+[ext_resource type="Script" path="res://scripts/data/group_spawn_schedule.gd" id="schedule"]
+[ext_resource type="Script" path="res://scripts/data/enemy_group_data.gd" id="group_script"]
+[ext_resource type="Script" path="res://scripts/data/enemy_group_entry.gd" id="entry_script"]
+[ext_resource type="Resource" path="res://resources/groups/initial.tres" id="group"]
+[ext_resource type="Resource" path="res://resources/spawns/all_edges.tres" id="location"]
+[ext_resource type="Resource" path="res://resources/enemies/melee.tres" id="melee"]
+[ext_resource type="Resource" path="res://resources/enemies/ranged.tres" id="ranged"]
+[ext_resource type="Resource" path="res://resources/enemies/healer.tres" id="healer"]
+
+[sub_resource type="Resource" id="w1_e0"]
+script = ExtResource("entry_script")
+enemy = ExtResource("melee")
+count = 4
+[sub_resource type="Resource" id="w1_e1"]
+script = ExtResource("entry_script")
+enemy = ExtResource("ranged")
+count = 2
+[sub_resource type="Resource" id="g_wave1"]
+script = ExtResource("group_script")
+display_name = "前锋斥候（6只）"
+entries = Array[ExtResource("entry_script")]([SubResource("w1_e0"), SubResource("w1_e1")])
+entry_interval = 0.24
+
+[sub_resource type="Resource" id="w2_e0"]
+script = ExtResource("entry_script")
+enemy = ExtResource("melee")
+count = 4
+[sub_resource type="Resource" id="w2_e1"]
+script = ExtResource("entry_script")
+enemy = ExtResource("ranged")
+count = 1
+[sub_resource type="Resource" id="w2_e2"]
+script = ExtResource("entry_script")
+enemy = ExtResource("healer")
+count = 1
+[sub_resource type="Resource" id="g_wave2"]
+script = ExtResource("group_script")
+display_name = "荒原巡哨（6只）"
+entries = Array[ExtResource("entry_script")]([SubResource("w2_e0"), SubResource("w2_e1"), SubResource("w2_e2")])
+entry_interval = 0.24
+
+[sub_resource type="Resource" id="w4_e0"]
+script = ExtResource("entry_script")
+enemy = ExtResource("melee")
+count = 6
+[sub_resource type="Resource" id="w4_e1"]
+script = ExtResource("entry_script")
+enemy = ExtResource("ranged")
+count = 2
+[sub_resource type="Resource" id="w4_e2"]
+script = ExtResource("entry_script")
+enemy = ExtResource("healer")
+count = 1
+[sub_resource type="Resource" id="g_wave4"]
+script = ExtResource("group_script")
+display_name = "荒地突袭队（9只）"
+entries = Array[ExtResource("entry_script")]([SubResource("w4_e0"), SubResource("w4_e1"), SubResource("w4_e2")])
+entry_interval = 0.18
+
+[sub_resource type="Resource" id="w5_e0"]
+script = ExtResource("entry_script")
+enemy = ExtResource("melee")
+count = 7
+[sub_resource type="Resource" id="w5_e1"]
+script = ExtResource("entry_script")
+enemy = ExtResource("ranged")
+count = 2
+[sub_resource type="Resource" id="w5_e2"]
+script = ExtResource("entry_script")
+enemy = ExtResource("healer")
+count = 1
+[sub_resource type="Resource" id="g_wave5"]
+script = ExtResource("group_script")
+display_name = "夹击猎群（10只）"
+entries = Array[ExtResource("entry_script")]([SubResource("w5_e0"), SubResource("w5_e1"), SubResource("w5_e2")])
+entry_interval = 0.16
+
+[sub_resource type="Resource" id="w6_e0"]
+script = ExtResource("entry_script")
+enemy = ExtResource("melee")
+count = 8
+[sub_resource type="Resource" id="w6_e1"]
+script = ExtResource("entry_script")
+enemy = ExtResource("ranged")
+count = 3
+[sub_resource type="Resource" id="w6_e2"]
+script = ExtResource("entry_script")
+enemy = ExtResource("healer")
+count = 1
+[sub_resource type="Resource" id="g_wave6"]
+script = ExtResource("group_script")
+display_name = "狂潮主力（12只）"
+entries = Array[ExtResource("entry_script")]([SubResource("w6_e0"), SubResource("w6_e1"), SubResource("w6_e2")])
+entry_interval = 0.15
+
+[sub_resource type="Resource" id="w7_e0"]
+script = ExtResource("entry_script")
+enemy = ExtResource("melee")
+count = 9
+[sub_resource type="Resource" id="w7_e1"]
+script = ExtResource("entry_script")
+enemy = ExtResource("ranged")
+count = 3
+[sub_resource type="Resource" id="w7_e2"]
+script = ExtResource("entry_script")
+enemy = ExtResource("healer")
+count = 2
+[sub_resource type="Resource" id="g_wave7"]
+script = ExtResource("group_script")
+display_name = "余烬兽潮（14只）"
+entries = Array[ExtResource("entry_script")]([SubResource("w7_e0"), SubResource("w7_e1"), SubResource("w7_e2")])
+entry_interval = 0.14
+
+[sub_resource type="Resource" id="s1"]
+script = ExtResource("schedule")
+group = SubResource("g_wave1")
+location = ExtResource("location")
+[sub_resource type="Resource" id="s2"]
+script = ExtResource("schedule")
+group = SubResource("g_wave2")
+location = ExtResource("location")
+[sub_resource type="Resource" id="s3"]
+script = ExtResource("schedule")
+group = ExtResource("group")
+location = ExtResource("location")
+[sub_resource type="Resource" id="s4"]
+script = ExtResource("schedule")
+group = SubResource("g_wave4")
+location = ExtResource("location")
+[sub_resource type="Resource" id="s5"]
+script = ExtResource("schedule")
+group = SubResource("g_wave5")
+location = ExtResource("location")
+[sub_resource type="Resource" id="s6"]
+script = ExtResource("schedule")
+group = SubResource("g_wave6")
+location = ExtResource("location")
+[sub_resource type="Resource" id="s7"]
+script = ExtResource("schedule")
+group = SubResource("g_wave7")
+location = ExtResource("location")
+
+[resource]
+script = ExtResource("encounter")
+id = "training"
+display_name = "荒地 · 限时敌潮"
+kind = 0
+preparation_time = 2.0
+duration = 35.0
+group_interval = 4.0
+schedules = Array[ExtResource("schedule")]([SubResource("s1"), SubResource("s2"), SubResource("s3"), SubResource("s4"), SubResource("s5"), SubResource("s6"), SubResource("s7")])

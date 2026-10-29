@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/character_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/primary_stats_data.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/data/character_equipment_rules.gd" id="3"]
+[ext_resource type="Script" path="res://scripts/data/equipment_stat_bonus.gd" id="4"]
+[ext_resource type="Texture2D" path="res://assets/art/wanderer.svg" id="5"]
+
+[sub_resource type="Resource" id="Start"]
+script = ExtResource("2")
+damage = 20.0
+
+[sub_resource type="Resource" id="Equipment"]
+script = ExtResource("3")
+slots = 12
+
+[sub_resource type="Resource" id="Count"]
+script = ExtResource("4")
+target = "damage"
+amount_per_unit = -5.0
+
+[resource]
+script = ExtResource("1")
+id = "multitasker"
+display_name = "多面手 (Multitasker)"
+description = "+20% 伤害；最多装备 12 把武器，每把武器使伤害降低 5%。"
+portrait = ExtResource("5")
+primary_stats = SubResource("Start")
+equipment_rules = SubResource("Equipment")
+equipment_stat_bonuses = Array[ExtResource("4")]([SubResource("Count")])

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/weapon_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/art/needle.svg" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "needle"
+display_name = "猎针"
+description = "自动瞄准附近敌人，沿直线突刺，命中路径上的敌人。"
+kind = 0
+weapon_tags = PackedStringArray("Precise")
+icon = ExtResource("2")
+damage = 35.0
+attack_range = 68.0
+attack_interval = 0.5
+area_radius = 0.0
+projectile_speed = 380.0

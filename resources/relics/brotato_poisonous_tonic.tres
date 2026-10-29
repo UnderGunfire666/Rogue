@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="RelicData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/relic_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/primary_stats_data.gd" id="2"]
+
+[sub_resource type="Resource" id="Stats"]
+script = ExtResource("2")
+attack_speed = 10.0
+crit_chance = 5.0
+weapon_range = 15.0
+hp_regeneration = -2.0
+
+[resource]
+script = ExtResource("1")
+id = "brotato_poisonous_tonic"
+display_name = "Poisonous Tonic"
+description = "+10% 攻击速度，+5% 暴击率，+15 攻击范围，-2 生命再生"
+rarity = 3
+base_price = 80
+copy_limit = 0
+tags = PackedStringArray("Attack Speed", "Crit Chance", "Range")
+primary_stats = SubResource("Stats")
+

@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/character_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/primary_stats_data.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/data/character_equipment_rules.gd" id="3"]
+[ext_resource type="Script" path="res://scripts/data/character_combat_rules.gd" id="4"]
+[ext_resource type="Texture2D" path="res://assets/art/wanderer.svg" id="5"]
+
+[sub_resource type="Resource" id="Start"]
+script = ExtResource("2")
+harvesting = 12.0
+
+[sub_resource type="Resource" id="Equipment"]
+script = ExtResource("3")
+slots = 1
+
+[sub_resource type="Resource" id="Combat"]
+script = ExtResource("4")
+item_price_multiplier = 0.8
+weapon_price_multiplier = 0.8
+xp_requirement_multiplier = 2.3
+gain_weapon_slot_on_level = true
+maximum_weapon_slots = 24
+
+[resource]
+script = ExtResource("1")
+id = "baby"
+display_name = "宝宝 (Baby)"
+description = "+12 收获；商店价格 -20%；起始 1 个武器槽，升级获得武器槽而非属性选择（最多 24 个）；升级经验需求 +130%。"
+portrait = ExtResource("5")
+primary_stats = SubResource("Start")
+equipment_rules = SubResource("Equipment")
+combat_rules = SubResource("Combat")

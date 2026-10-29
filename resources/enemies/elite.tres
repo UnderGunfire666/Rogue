@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/enemy_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/art/enemy_melee.svg" id="2"]
+[ext_resource type="Resource" path="res://resources/enemy_equipment/claws.tres" id="3"]
+[ext_resource type="Resource" path="res://resources/enemy_relics/elite_momentum.tres" id="4"]
+[ext_resource type="Resource" path="res://resources/skills/slasher_cleave.tres" id="5"]
+
+[resource]
+script = ExtResource("1")
+id = "elite"
+display_name = "精英 · 重刃裁决者"
+category = 1
+movement = 0
+texture = ExtResource("2")
+max_health = 72.0
+movement_speed = 144.0
+safety_distance = 150.0
+equipment = ExtResource("3")
+relic = ExtResource("4")
+skill = ExtResource("5")
+experience_reward = 8
+gold_reward = 8
+

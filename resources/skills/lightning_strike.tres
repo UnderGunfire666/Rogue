@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/skill_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "lightning_strike"
+display_name = "电弧跳跃"
+description = "召唤落雷轰击目标点最近的敌人，并在邻近敌人之间弹跳最多 4 次造成感电伤害。"
+kind = 5
+damage = 34.0
+elemental_scaling = 1.5
+cast_range = 260.0
+radius = 90.0
+cooldown = 6.0
+projectile_count = 4
+

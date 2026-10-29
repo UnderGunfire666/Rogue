@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/skill_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "slasher_cleave"
+display_name = "重刃横扫"
+description = "挥动巨刃对身前大范围区域发动毁灭性顺劈，彻底覆盖贴身范围。"
+kind = 0
+damage = 36.0
+elemental_scaling = 0.8
+cast_range = 95.0
+radius = 78.0
+cooldown = 5.0
+spread_angle = 140.0
+

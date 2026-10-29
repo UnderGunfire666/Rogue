@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="RelicData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/relic_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/art/seed.svg" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "seed"
+display_name = "温养种子"
+description = "战斗中每秒恢复 1 点生命。"
+icon = ExtResource("2")
+regeneration = 1.0
+tags = PackedStringArray("HP Regeneration")

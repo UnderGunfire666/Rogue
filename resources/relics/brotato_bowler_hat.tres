@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="RelicData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/relic_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/primary_stats_data.gd" id="2"]
+
+[sub_resource type="Resource" id="Stats"]
+script = ExtResource("2")
+luck = 15.0
+harvesting = 18.0
+attack_speed = -5.0
+crit_chance = -3.0
+
+[resource]
+script = ExtResource("1")
+id = "brotato_bowler_hat"
+display_name = "Bowler Hat"
+description = "+15 幸运，+18 收获，-5% 攻击速度，-3% 暴击率"
+rarity = 3
+base_price = 75
+copy_limit = 0
+tags = PackedStringArray("Luck", "Harvesting")
+primary_stats = SubResource("Stats")
+

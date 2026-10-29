@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="RelicData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/relic_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/primary_stats_data.gd" id="2"]
+
+[sub_resource type="Resource" id="Stats"]
+script = ExtResource("2")
+luck = 20.0
+hp_regeneration = -2.0
+
+[resource]
+script = ExtResource("1")
+id = "brotato_shady_potion"
+display_name = "Shady Potion"
+description = "+20 幸运，-2 生命再生"
+rarity = 2
+base_price = 48
+copy_limit = 0
+tags = PackedStringArray("Luck")
+primary_stats = SubResource("Stats")
+

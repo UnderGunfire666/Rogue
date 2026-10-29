@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/weapon_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/art/pistol.svg" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "pistol"
+display_name = "余烬手枪"
+description = "自动瞄准射程内最近的敌人，按攻击间隔射击。"
+kind = 1
+weapon_tags = PackedStringArray("Gun")
+icon = ExtResource("2")
+damage = 14.0
+attack_range = 500.0
+attack_interval = 0.2
+area_radius = 0.0
+projectile_speed = 380.0

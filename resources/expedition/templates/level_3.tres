@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="MapTemplateData" load_steps=20 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/map_template_data.gd" id="template"]
+[ext_resource type="Script" path="res://scripts/data/event_data.gd" id="event"]
+[ext_resource type="Script" path="res://scripts/data/reward_data.gd" id="reward"]
+[ext_resource type="Script" path="res://scripts/data/reward_option_data.gd" id="option"]
+[ext_resource type="Script" path="res://scripts/data/equipment_data.gd" id="equipment"]
+[ext_resource type="Script" path="res://scripts/data/relic_data.gd" id="relic"]
+[ext_resource type="Resource" path="res://resources/encounters/training.tres" id="normal"]
+[ext_resource type="Resource" path="res://resources/encounters/elite.tres" id="elite"]
+[ext_resource type="Resource" path="res://resources/encounters/boss.tres" id="boss"]
+[ext_resource type="Resource" path="res://resources/weapons/cleaver.tres" id="cleaver"]
+[ext_resource type="Resource" path="res://resources/relics/fury.tres" id="fury"]
+
+[sub_resource type="Resource" id="gold_reward"]
+script = ExtResource("reward")
+gold = 25
+
+[sub_resource type="Resource" id="equipment_reward"]
+script = ExtResource("reward")
+equipment = Array[ExtResource("equipment")]([ExtResource("cleaver")])
+
+[sub_resource type="Resource" id="relic_reward"]
+script = ExtResource("reward")
+relics = Array[ExtResource("relic")]([ExtResource("fury")])
+
+[sub_resource type="Resource" id="gold_option"]
+script = ExtResource("option")
+title = "旅途金币"
+description = "获得 25 金币。"
+reward = SubResource("gold_reward")
+
+[sub_resource type="Resource" id="equipment_option"]
+script = ExtResource("option")
+title = "旅人装备"
+description = "获得裂石斧，并选择放入装备槽。"
+reward = SubResource("equipment_reward")
+
+[sub_resource type="Resource" id="relic_option"]
+script = ExtResource("option")
+title = "疾攻刻印"
+description = "获得一个近战攻击频率 +50% 的遗物。"
+reward = SubResource("relic_reward")
+
+[sub_resource type="Resource" id="event_a"]
+script = ExtResource("event")
+id = "level_3_dark_sea"
+title = "静止暗海"
+text = "梦境的尽头是一片静止的暗海，远方的余烬汇聚成最后的冠冕。"
+
+[sub_resource type="Resource" id="event_b"]
+script = ExtResource("event")
+id = "level_3_convergence"
+title = "分支收束"
+text = "所有分支在此收束。穿过最后的寂静，便是这趟远征的终点。"
+
+[resource]
+script = ExtResource("template")
+id = "level_3"
+display_name = "第三层梦境 · 余烬深渊"
+level = 3
+level_multiplier = 3.0
+start_name = "深渊边缘"
+boss_name = "余烬终焉"
+normal_encounters = Array[ExtResource("normal")]([ExtResource("normal")])
+elite_encounters = Array[ExtResource("elite")]([ExtResource("elite")])
+boss_encounter = ExtResource("boss")
+reward_options = Array[ExtResource("option")]([SubResource("gold_option"), SubResource("equipment_option"), SubResource("relic_option")])
+events = Array[ExtResource("event")]([SubResource("event_a"), SubResource("event_b")])

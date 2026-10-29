@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="RelicData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/relic_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/primary_stats_data.gd" id="2"]
+
+[sub_resource type="Resource" id="Stats"]
+script = ExtResource("2")
+armor = 3.0
+max_hp = 5.0
+speed = -5.0
+
+[resource]
+script = ExtResource("1")
+id = "brotato_warrior_helmet"
+display_name = "Warrior Helmet"
+description = "+3 护甲，+5 最大生命，-5% 移速"
+rarity = 3
+base_price = 80
+copy_limit = 0
+tags = PackedStringArray("Armor", "Max HP")
+primary_stats = SubResource("Stats")
+

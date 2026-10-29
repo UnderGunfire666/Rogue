@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/skill_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "charger_dash"
+display_name = "野蛮冲撞"
+description = "短暂锁定方向蓄力预警后高速直线暴冲，对路径上的目标造成撞击伤害。"
+kind = 1
+damage = 16.0
+elemental_scaling = 0.5
+cast_range = 220.0
+radius = 34.0
+cooldown = 5.5
+duration = 0.35
+dash_speed = 540.0
+

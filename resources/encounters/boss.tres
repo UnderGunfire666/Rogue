@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="EncounterData" load_steps=11 format=3]
+[ext_resource type="Script" path="res://scripts/data/encounter_data.gd" id="encounter"]
+[ext_resource type="Script" path="res://scripts/data/group_spawn_schedule.gd" id="schedule"]
+[ext_resource type="Resource" path="res://resources/spawns/all_edges.tres" id="location"]
+[ext_resource type="Resource" path="res://resources/groups/guard.tres" id="guard"]
+[ext_resource type="Resource" path="res://resources/groups/elite.tres" id="elite"]
+[ext_resource type="Resource" path="res://resources/enemies/boss.tres" id="boss"]
+[ext_resource type="Resource" path="res://resources/spawns/boss_north.tres" id="boss_location"]
+[sub_resource type="Resource" id="rule0"]
+script = ExtResource("schedule")
+group = ExtResource("guard")
+location = ExtResource("location")
+[sub_resource type="Resource" id="rule1"]
+script = ExtResource("schedule")
+group = ExtResource("elite")
+location = ExtResource("location")
+[sub_resource type="Resource" id="rule2"]
+script = ExtResource("schedule")
+group = ExtResource("guard")
+location = ExtResource("location")
+[resource]
+script = ExtResource("encounter")
+id = "boss"
+display_name = "枯冠 · 关底"
+kind = 2
+preparation_time = 2.0
+duration = 45.0
+group_interval = 4.0
+schedules = Array[ExtResource("schedule")]([SubResource("rule0"), SubResource("rule1"), SubResource("rule2")])
+boss = ExtResource("boss")
+boss_after_group_count = 2
+boss_location = ExtResource("boss_location")

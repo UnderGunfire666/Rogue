@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/character_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/primary_stats_data.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/data/character_combat_rules.gd" id="3"]
+[ext_resource type="Script" path="res://scripts/data/character_event_effect.gd" id="4"]
+[ext_resource type="Texture2D" path="res://assets/art/wanderer.svg" id="5"]
+
+[sub_resource type="Resource" id="Start"]
+script = ExtResource("2")
+speed = -5.0
+
+[sub_resource type="Resource" id="Growth"]
+script = ExtResource("2")
+speed = 10.0
+
+[sub_resource type="Resource" id="Combat"]
+script = ExtResource("3")
+enemy_material_multiplier = 0.5
+
+[sub_resource type="Resource" id="Money"]
+script = ExtResource("4")
+trigger = 10
+effect = 4
+amount = 5.0
+every_n = 10
+
+[sub_resource type="Resource" id="Life"]
+script = ExtResource("4")
+trigger = 10
+effect = 0
+stat = "max_hp"
+amount = 1.0
+every_n = 80
+
+[resource]
+script = ExtResource("1")
+id = "hiker"
+display_name = "徒步者 (Hiker)"
+description = "每移动 10 步获得 5 金币，每 80 步获得 1 最大生命；移速成长 +10%，初始移速 -5%，敌人金币掉落 -50%。"
+portrait = ExtResource("5")
+primary_stats = SubResource("Start")
+growth_modifiers = SubResource("Growth")
+combat_rules = SubResource("Combat")
+event_effects = Array[ExtResource("4")]([SubResource("Money"), SubResource("Life")])

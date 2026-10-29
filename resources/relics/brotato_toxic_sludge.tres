@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="RelicData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/relic_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/primary_stats_data.gd" id="2"]
+
+[sub_resource type="Resource" id="Stats"]
+script = ExtResource("2")
+elemental_damage = 2.0
+dodge = -2.0
+
+[resource]
+script = ExtResource("1")
+id = "brotato_toxic_sludge"
+display_name = "Toxic Sludge"
+description = "+2 元素伤害，-2% 闪避"
+rarity = 1
+base_price = 20
+copy_limit = 0
+tags = PackedStringArray("Elemental Damage")
+primary_stats = SubResource("Stats")
+

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/enemy_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/art/enemy_healer.svg" id="2"]
+[ext_resource type="Resource" path="res://resources/enemy_equipment/rifle.tres" id="3"]
+[ext_resource type="Resource" path="res://resources/skills/spawner_hatch.tres" id="4"]
+
+[resource]
+script = ExtResource("1")
+id = "spawner"
+display_name = "腐蚀巢穴"
+category = 0
+movement = 1
+texture = ExtResource("2")
+max_health = 56.0
+movement_speed = 72.0
+safety_distance = 220.0
+equipment = ExtResource("3")
+skill = ExtResource("4")
+experience_reward = 6
+gold_reward = 5
+

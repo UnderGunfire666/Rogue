@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="EnemyEquipmentData" load_steps=5 format=3]
+[ext_resource type="Script" path="res://scripts/data/enemy_equipment_data.gd" id="equipment"]
+[ext_resource type="Script" path="res://scripts/data/attack_profile_data.gd" id="attack"]
+[sub_resource type="Resource" id="profile0"]
+script = ExtResource("attack")
+kind = 1
+damage = 16
+attack_range = 170
+attack_interval = 1.8
+projectile_speed = 125
+projectile_count = 8
+spread_degrees = 360.0
+[sub_resource type="Resource" id="profile1"]
+script = ExtResource("attack")
+kind = 0
+damage = 18
+attack_range = 42
+attack_interval = 1.1
+[resource]
+script = ExtResource("equipment")
+id = "crown_arsenal"
+display_name = "枯冠军械"
+recipient = 1
+attacks = Array[ExtResource("attack")]([SubResource("profile0"), SubResource("profile1")])

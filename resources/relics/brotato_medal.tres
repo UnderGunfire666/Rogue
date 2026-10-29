@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="RelicData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/relic_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/primary_stats_data.gd" id="2"]
+
+[sub_resource type="Resource" id="Stats"]
+script = ExtResource("2")
+max_hp = 3.0
+damage = 3.0
+armor = 1.0
+speed = 3.0
+crit_chance = -4.0
+
+[resource]
+script = ExtResource("1")
+id = "brotato_medal"
+display_name = "Medal"
+description = "+3 最大生命，+3% 伤害，+1 护甲，+3% 移速，-4% 暴击率"
+rarity = 2
+base_price = 55
+copy_limit = 0
+tags = PackedStringArray("Max HP", "Damage", "Armor", "Speed")
+primary_stats = SubResource("Stats")
+

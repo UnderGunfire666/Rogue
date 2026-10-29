@@ -1,0 +1,96 @@
+[gd_resource type="Resource" script_class="MapData" load_steps=25 format=3]
+[ext_resource type="Script" path="res://scripts/data/map_data.gd" id="map"]
+[ext_resource type="Script" path="res://scripts/data/map_cell_data.gd" id="cell"]
+[ext_resource type="Script" path="res://scripts/data/event_data.gd" id="event"]
+[ext_resource type="Script" path="res://scripts/data/reward_data.gd" id="reward"]
+[ext_resource type="Script" path="res://scripts/data/reward_option_data.gd" id="option"]
+[ext_resource type="Script" path="res://scripts/data/equipment_data.gd" id="equipment"]
+[ext_resource type="Script" path="res://scripts/data/relic_data.gd" id="relic"]
+[ext_resource type="Resource" path="res://resources/encounters/training.tres" id="normal"]
+[ext_resource type="Resource" path="res://resources/encounters/elite.tres" id="elite"]
+[ext_resource type="Resource" path="res://resources/encounters/boss.tres" id="boss"]
+[ext_resource type="Resource" path="res://resources/weapons/cleaver.tres" id="cleaver"]
+[ext_resource type="Resource" path="res://resources/relics/fury.tres" id="fury"]
+[sub_resource type="Resource" id="camp_event"]
+script = ExtResource("event")
+text = "新旅程从这里开始。沿上下左右相邻格子前进。"
+[sub_resource type="Resource" id="shrine_event"]
+script = ExtResource("event")
+text = "祭坛上的余烬仍在微微发亮。石碑记载着过往旅人的足迹。\n\n你记下残留的铭文，将这段荒地的往事带上旅途。"
+[sub_resource type="Resource" id="gold_reward"]
+script = ExtResource("reward")
+gold = 25
+[sub_resource type="Resource" id="equipment_reward"]
+script = ExtResource("reward")
+equipment = Array[ExtResource("equipment")]([ExtResource("cleaver")])
+[sub_resource type="Resource" id="relic_reward"]
+script = ExtResource("reward")
+relics = Array[ExtResource("relic")]([ExtResource("fury")])
+[sub_resource type="Resource" id="gold_option"]
+script = ExtResource("option")
+title = "旅途金币"
+description = "获得 25 金币。"
+reward = SubResource("gold_reward")
+[sub_resource type="Resource" id="equipment_option"]
+script = ExtResource("option")
+title = "旅人装备"
+description = "获得裂石斧，并选择放入左手或右手。"
+reward = SubResource("equipment_reward")
+[sub_resource type="Resource" id="relic_option"]
+script = ExtResource("option")
+title = "疾攻刻印"
+description = "获得一个近战攻击频率 +50% 的遗物。"
+reward = SubResource("relic_reward")
+[sub_resource type="Resource" id="camp"]
+script = ExtResource("cell")
+id = "camp"
+display_name = "旅人营地"
+description = "新旅程的起点。"
+kind = 4
+grid_position = Vector2i(0, 1)
+event = SubResource("camp_event")
+[sub_resource type="Resource" id="crossing"]
+script = ExtResource("cell")
+id = "crossing"
+display_name = "荒地哨口"
+description = "普通战斗：3 组敌人，每组 5 赤牙、2 射手、1 医师，允许重叠。"
+kind = 0
+grid_position = Vector2i(1, 1)
+encounter = ExtResource("normal")
+[sub_resource type="Resource" id="cache"]
+script = ExtResource("cell")
+id = "cache"
+display_name = "旅人遗藏"
+description = "从装备、金币或遗物奖励中选择一项。"
+kind = 3
+grid_position = Vector2i(2, 1)
+reward_options = Array[ExtResource("option")]([SubResource("gold_option"), SubResource("equipment_option"), SubResource("relic_option")])
+[sub_resource type="Resource" id="shrine"]
+script = ExtResource("cell")
+id = "shrine"
+display_name = "余烬祭坛"
+description = "阅读一段荒地的往事。"
+kind = 4
+grid_position = Vector2i(1, 2)
+event = SubResource("shrine_event")
+[sub_resource type="Resource" id="watch"]
+script = ExtResource("cell")
+id = "watch"
+display_name = "精英巡逻"
+description = "普通组与精英组共同组成的战斗。"
+kind = 1
+grid_position = Vector2i(2, 2)
+encounter = ExtResource("elite")
+[sub_resource type="Resource" id="crown"]
+script = ExtResource("cell")
+id = "crown"
+display_name = "枯冠之门"
+description = "第 2 组进场后清场，再生成 BOSS；之后第 3 组继续进场。"
+kind = 2
+grid_position = Vector2i(3, 1)
+encounter = ExtResource("boss")
+[resource]
+script = ExtResource("map")
+display_name = "余烬荒地"
+starting_cell_id = "camp"
+cells = Array[ExtResource("cell")]([SubResource("camp"), SubResource("crossing"), SubResource("cache"), SubResource("shrine"), SubResource("watch"), SubResource("crown")])

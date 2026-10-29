@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="RelicData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/relic_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/primary_stats_data.gd" id="2"]
+
+[sub_resource type="Resource" id="Stats"]
+script = ExtResource("2")
+ranged_damage = 2.0
+attack_speed = 10.0
+damage = -6.0
+
+[resource]
+script = ExtResource("1")
+id = "brotato_small_magazine"
+display_name = "Small Magazine"
+description = "+2 远程伤害，+10% 攻击速度，-6% 伤害"
+rarity = 2
+base_price = 60
+copy_limit = 0
+tags = PackedStringArray("Ranged Damage", "Attack Speed")
+primary_stats = SubResource("Stats")
+

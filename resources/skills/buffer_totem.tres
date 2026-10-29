@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/skill_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "buffer_totem"
+display_name = "战意战鼓"
+description = "激发半径 180 内的战意光环，使范围内友方移速提升 40%、攻击速度提升 30%，持续 4 秒。"
+kind = 3
+damage = 8.0
+elemental_scaling = 0.5
+cast_range = 260.0
+radius = 180.0
+cooldown = 6.5
+duration = 4.0
+buff_move_speed_bonus = 0.4
+buff_attack_speed_bonus = 0.3
+

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/weapon_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/art/cleaver.svg" id="2"]
+[ext_resource type="Resource" path="res://resources/skills/ember_burst.tres" id="3"]
+
+[resource]
+script = ExtResource("1")
+id = "cleaver"
+display_name = "裂石斧"
+description = "自动瞄准附近敌人，沿弧线挥砍，命中路径上的敌人。"
+kind = 0
+weapon_tags = PackedStringArray("Heavy")
+melee_motion = 1
+target_count = 3
+icon = ExtResource("2")
+skill = ExtResource("3")
+damage = 21.0
+attack_range = 80.0
+attack_interval = 0.9
+area_radius = 36.0
+projectile_speed = 380.0

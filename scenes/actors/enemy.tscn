@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3]
+[ext_resource type="Script" path="res://scripts/actors/enemy.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/components/health.gd" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/actors/actor_visual.tscn" id="3"]
+[ext_resource type="Script" path="res://scripts/combat/combat_loadout_controller.gd" id="4"]
+[sub_resource type="CircleShape2D" id="shape"]
+radius = 12.0
+[sub_resource type="StyleBoxFlat" id="bar"]
+bg_color = Color(0.8, 0.38, 0.43, 1)
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+motion_mode = 1
+script = ExtResource("1")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("shape")
+[node name="Visual" parent="." instance=ExtResource("3")]
+[node name="Health" type="Node" parent="."]
+script = ExtResource("2")
+[node name="Loadout" type="Node2D" parent="."]
+script = ExtResource("4")
+[node name="ThinkTimer" type="Timer" parent="."]
+wait_time = 0.4
+[node name="HealthBar" type="ProgressBar" parent="."]
+visible = false
+offset_left = -18.0
+offset_top = -26.0
+offset_right = 18.0
+offset_bottom = -22.0
+mouse_filter = 2
+theme_override_styles/fill = SubResource("bar")
+show_percentage = false

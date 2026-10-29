@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=3 format=3]
+[ext_resource type="Script" path="res://scripts/data/weapon_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/art/staff.svg" id="2"]
+[resource]
+script = ExtResource("1")
+id = "arcane_staff"
+display_name = "紫晶法杖"
+description = "自动锁定范围内最近的敌人，法术即刻命中。"
+icon = ExtResource("2")
+kind = 2
+weapon_tags = PackedStringArray("Magic")
+rarity = 2
+damage = 35.0
+attack_range = 220.0
+attack_interval = 0.5
+target_count = 1

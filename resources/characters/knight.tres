@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/character_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/primary_stats_data.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/data/stat_conversion_data.gd" id="3"]
+[ext_resource type="Script" path="res://scripts/data/character_equipment_rules.gd" id="4"]
+[ext_resource type="Texture2D" path="res://assets/art/wanderer.svg" id="5"]
+
+[sub_resource type="Resource" id="Start"]
+script = ExtResource("2")
+armor = 3.0
+
+[sub_resource type="Resource" id="Growth"]
+script = ExtResource("2")
+attack_speed = -50.0
+harvesting = -80.0
+
+[sub_resource type="Resource" id="Conversion"]
+script = ExtResource("3")
+source = "armor"
+target = "melee_damage"
+factor = 2.0
+
+[sub_resource type="Resource" id="Equipment"]
+script = ExtResource("4")
+allow_ranged = false
+minimum_rarity = 2
+
+[resource]
+script = ExtResource("1")
+id = "knight"
+display_name = "骑士 (Knight)"
+description = "+3 护甲；每点护甲增加 2 近战伤害；不能装备远程武器，只能装备 2 级及以上武器；攻击速度成长 -50%，收获成长 -80%。"
+portrait = ExtResource("5")
+primary_stats = SubResource("Start")
+growth_modifiers = SubResource("Growth")
+stat_conversions = Array[ExtResource("3")]([SubResource("Conversion")])
+equipment_rules = SubResource("Equipment")

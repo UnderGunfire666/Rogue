@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/skill_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "ember_burst"
+display_name = "余烬爆破"
+description = "在目标位置引发余烬爆破，对圆形范围内的所有敌人造成高额爆炸伤害。"
+kind = 0
+damage = 42.0
+elemental_scaling = 1.0
+cast_range = 240.0
+radius = 64.0
+cooldown = 9.0

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="RelicData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/relic_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/primary_stats_data.gd" id="2"]
+
+[sub_resource type="Resource" id="Stats"]
+script = ExtResource("2")
+elemental_damage = 4.0
+melee_damage = -1.0
+ranged_damage = -1.0
+
+[resource]
+script = ExtResource("1")
+id = "brotato_fuel_tank"
+display_name = "Fuel Tank"
+description = "+4 元素伤害，-1 近战伤害，-1 远程伤害"
+rarity = 2
+base_price = 45
+copy_limit = 0
+tags = PackedStringArray("Elemental Damage")
+primary_stats = SubResource("Stats")
+

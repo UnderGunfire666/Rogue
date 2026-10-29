@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/character_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/primary_stats_data.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/data/character_event_effect.gd" id="3"]
+[ext_resource type="Texture2D" path="res://assets/art/wanderer.svg" id="4"]
+
+[sub_resource type="Resource" id="Start"]
+script = ExtResource("2")
+max_hp = 12.0
+life_steal = 25.0
+hp_regeneration = -100.0
+
+[sub_resource type="Resource" id="Drain"]
+script = ExtResource("3")
+trigger = 7
+effect = 2
+amount = 1.0
+
+[resource]
+script = ExtResource("1")
+id = "sick"
+display_name = "病患 (Sick)"
+description = "+12 最大生命，+25% 生命窃取，-100 生命再生；战斗中每秒受到 1 点伤害。"
+portrait = ExtResource("4")
+primary_stats = SubResource("Start")
+event_effects = Array[ExtResource("3")]([SubResource("Drain")])

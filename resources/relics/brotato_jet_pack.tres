@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="RelicData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/relic_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/primary_stats_data.gd" id="2"]
+
+[sub_resource type="Resource" id="Stats"]
+script = ExtResource("2")
+speed = 15.0
+dodge = 10.0
+max_hp = -5.0
+armor = -1.0
+
+[resource]
+script = ExtResource("1")
+id = "brotato_jet_pack"
+display_name = "Jet Pack"
+description = "+15% 移速，+10% 闪避，-5 最大生命，-1 护甲"
+rarity = 4
+base_price = 100
+copy_limit = 0
+tags = PackedStringArray("Speed", "Dodge")
+primary_stats = SubResource("Stats")
+

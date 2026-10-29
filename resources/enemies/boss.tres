@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=5 format=3]
+[ext_resource type="Script" path="res://scripts/data/enemy_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/art/enemy_boss.svg" id="2"]
+[ext_resource type="Resource" path="res://resources/enemy_equipment/crown_arsenal.tres" id="3"]
+[ext_resource type="Resource" path="res://resources/enemy_relics/crown_vigor.tres" id="4"]
+[resource]
+script = ExtResource("1")
+id = "boss"
+display_name = "关底 · 枯冠"
+category = 2
+movement = 1
+texture = ExtResource("2")
+max_health = 360.0
+movement_speed = 108.0
+safety_distance = 150.0
+equipment = ExtResource("3")
+relic = ExtResource("4")
+experience_reward = 20
+gold_reward = 24

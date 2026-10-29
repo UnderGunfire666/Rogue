@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="RelicData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/relic_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/primary_stats_data.gd" id="2"]
+
+[sub_resource type="Resource" id="Stats"]
+script = ExtResource("2")
+luck = 8.0
+elemental_damage = -1.0
+
+[resource]
+script = ExtResource("1")
+id = "brotato_lost_duck"
+display_name = "Lost Duck"
+description = "+8 幸运，-1 元素伤害"
+rarity = 1
+base_price = 25
+copy_limit = 0
+tags = PackedStringArray("Luck")
+primary_stats = SubResource("Stats")
+

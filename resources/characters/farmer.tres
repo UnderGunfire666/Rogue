@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/character_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/primary_stats_data.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/data/character_combat_rules.gd" id="3"]
+[ext_resource type="Script" path="res://scripts/data/character_event_effect.gd" id="4"]
+[ext_resource type="Texture2D" path="res://assets/art/wanderer.svg" id="5"]
+
+[sub_resource type="Resource" id="Start"]
+script = ExtResource("2")
+harvesting = 20.0
+
+[sub_resource type="Resource" id="Combat"]
+script = ExtResource("3")
+enemy_material_multiplier = 0.5
+harvesting_growth_bonus = 0.03
+
+[sub_resource type="Resource" id="Food"]
+script = ExtResource("4")
+trigger = 5
+effect = 0
+stat = "harvesting"
+amount = 1.0
+only_at_full_health = true
+
+[resource]
+script = ExtResource("1")
+id = "farmer"
+display_name = "农夫 (Farmer)"
+description = "+20 收获；收获额外增长 3%；满血拾取消耗品获得 1 收获；敌人金币掉落 -50%。"
+portrait = ExtResource("5")
+primary_stats = SubResource("Start")
+combat_rules = SubResource("Combat")
+event_effects = Array[ExtResource("4")]([SubResource("Food")])
